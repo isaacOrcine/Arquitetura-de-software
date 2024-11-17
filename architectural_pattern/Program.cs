@@ -71,5 +71,45 @@ class Program
         {
             File.Copy(newPath, newPath.Replace(sourcePath, destinationPath), true);
         }
+
+        // Conversão de MVC para MVP
+        ConvertMvcToMvp(destinationPath);
+    }
+
+    static void ConvertMvcToMvp(string projectPath)
+    {
+        // Exemplo de conversão de um controlador MVC para um presenter MVP
+        string controllerPath = Path.Combine(projectPath, "Controllers", "UserController.cs");
+        string presenterPath = Path.Combine(projectPath, "Presenters", "UserPresenter.cs");
+        string viewInterfacePath = Path.Combine(projectPath, "Views", "IUserView.cs");
+
+        if (File.Exists(controllerPath))
+        {
+            string controllerCode = File.ReadAllText(controllerPath);
+
+            // Exemplo simples de transformação de código
+            string presenterCode = controllerCode.Replace("UserController", "UserPresenter")
+                                                 .Replace("Controller", "Presenter");
+
+            string viewInterfaceCode = @"
+public interface IUserView
+{
+    void DisplayUser(UserModel user);
+}";
+
+            // Cria diretórios se não existirem
+            Directory.CreateDirectory(Path.Combine(projectPath, "Presenters"));
+            Directory.CreateDirectory(Path.Combine(projectPath, "Views"));
+
+            // Salva o código transformado
+            File.WriteAllText(presenterPath, presenterCode);
+            File.WriteAllText(viewInterfacePath, viewInterfaceCode);
+
+            Console.WriteLine("Conversão de MVC para MVP concluída.");
+        }
+        else
+        {
+            Console.WriteLine("Controlador MVC não encontrado.");
+        }
     }
 }
