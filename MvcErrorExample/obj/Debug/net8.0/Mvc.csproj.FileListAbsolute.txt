@@ -1,0 +1,11 @@
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.csproj.AssemblyReference.cache
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.csproj.SuggestedBindingRedirects.cache
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.dll.config
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.AssemblyInfoInputs.cache
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.AssemblyInfo.cs
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.csproj.CoreCompileInputs.cache
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.RazorAssemblyInfo.cache
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.RazorAssemblyInfo.cs
+C:\Users\Isaac\Desktop\A\UFLA\Arquitetura de software\TP5\MvcErrorExample\obj\Debug\net8.0\Mvc.sourcelink.json
