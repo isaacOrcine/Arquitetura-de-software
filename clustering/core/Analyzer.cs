@@ -73,8 +73,9 @@ namespace ModularizationOportunities.core
 
         private CommunitiesList FindCommunities(Graph graph)
         {
-            int k = 3; // Defina o número de clusters desejado
-            var kmeans = new KMeansAlgorithm(graph, k);
+            int maxK = 10; // máximo de k a ser testado
+            int optimalK = ElbowMethod.DetermineOptimalK(graph, maxK);
+            var kmeans = new KMeansAlgorithm(graph, optimalK);
             var communities = kmeans.FindClusters();
 
             return communities;

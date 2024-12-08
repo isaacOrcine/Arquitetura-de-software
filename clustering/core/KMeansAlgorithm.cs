@@ -57,9 +57,27 @@ namespace ModularizationOportunities.core
         private void InitializeClusters()
         {
             var random = new Random();
+            var initialCentroids = new List<int>();
+
+            // K-means++ initialization
+            var firstCentroid = _graph.Nodes[random.Next(_graph.Nodes.Count)];
+            initialCentroids.Add(firstCentroid);
+
+            for (int i = 1; i < _k; i++)
+            {
+                var distances = _graph.Nodes.Select(node => initialCentroids.Min(centroid => _graph.CalculateDistance(node, centroid))).ToArray();
+                var cumulativeDistances = distances.Select((d, index) => distances.Take(index + 1).Sum()).ToArray();
+                var totalDistance = cumulativeDistances.Last();
+                var r = random.NextDouble() * totalDistance;
+
+                var nextCentroid = _graph.Nodes[cumulativeDistances.ToList().FindIndex(cumulativeDistance => cumulativeDistance >= r)];
+                initialCentroids.Add(nextCentroid);
+            }
+
             foreach (var node in _graph.Nodes)
             {
-                var cluster = random.Next(_k);
+                var closestCentroid = initialCentroids.OrderBy(centroid => _graph.CalculateDistance(node, centroid)).First();
+                var cluster = initialCentroids.IndexOf(closestCentroid);
                 _nodeToCluster[node] = cluster;
 
                 if (!_clusterToNodes.ContainsKey(cluster))
